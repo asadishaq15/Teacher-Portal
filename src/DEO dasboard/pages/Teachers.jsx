@@ -6,7 +6,7 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "../components";
 
-const Employees = () => {
+const Teachers = () => {
 
   const {
     setCurrentColor,
@@ -106,7 +106,7 @@ const Employees = () => {
             
               
             {/*  show teacher profile in tailwind table*/ }
-
+            <div className="table-padding">
             <table className="min-w-full divide-y divide-gray-200 mt-4">
             <thead>
               <tr>
@@ -159,6 +159,7 @@ const Employees = () => {
 </tbody>
 
           </table>
+          </div>
             </div>
             <Footer />
           </div>
@@ -168,7 +169,7 @@ const Employees = () => {
   );
 };
 
-export default Employees;
+export default Teachers;
 
 
 

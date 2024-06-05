@@ -53,7 +53,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
 
-      <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
+      <NavButton customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
       <div className="flex">
       
         <TooltipComponent content="Profile" position="BottomCenter">

@@ -4,14 +4,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   DEODashbaord,
   Schools,
-  Employees,
+  Teachers,
   TranferRequests,
 } from "./DEO dasboard/pages";
 
 import {
   Teacherdashboard,
   RequestTransfer,
-  TeacherProfile
+  TeacherProfile,
+  ViewSchools,
+  ViewTeachers
 } from "./Teacher Dashboard/pages";
 
 import "./App.css";
@@ -42,12 +44,14 @@ const App = () => {
   
         {/* pages  */}
         <Route path="/schools" element={<Schools />} />
-        <Route path="/employees" element={<Employees />} />
+        <Route path="/teachers" element={<Teachers />} />
         <Route path="/transfer-requests" element={<TranferRequests />} />
 
         {/* teacher dashboard  */}
         <Route path="/Request-Tranfer" element={<RequestTransfer />} />
         <Route path="/teacher-profile" element={<TeacherProfile />} />
+        <Route path="/view-schools" element={<ViewSchools />} />
+        <Route path="/view-teachers" element={<ViewTeachers />} />
         {/* <Route path = "/submit-request" element = {<Request/>}/> */}
 
       </Routes>

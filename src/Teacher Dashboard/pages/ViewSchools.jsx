@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import React, {useEffect} from 'react';
 
 import { Header } from '../components';
 import { useStateContext } from '../../contexts/ContextProvider';
@@ -7,7 +6,7 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "../components";
 
-const TranferRequests = () => {
+const ViewSchools = () => {
 
   const {
     setCurrentColor,
@@ -26,21 +25,6 @@ const TranferRequests = () => {
       setCurrentColor(currentThemeColor);
       setCurrentMode(currentThemeMode);
     }
-  }, []);
-
-  const [transferRequests, setTransferRequests] = useState([]);
-
-  const fetchTransferRequests = async () => {
-    try {
-      const response = await axios.get('http://localhost:8000/api/all-requests');
-      setTransferRequests(response.data.transferRequests);
-    } catch (error) {
-      console.error('Failed to fetch transfer requests', error);
-    }
-  };
-  useEffect(() => {
-    // Fetch transfer requests when component mounts
-    fetchTransferRequests();
   }, []);
 
   return (
@@ -80,45 +64,9 @@ const TranferRequests = () => {
             <div>
               {themeSettings && <ThemeSettings />}
               <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-              <Header category="Page" title="Transfer Requests" />
+              <Header category="Page" title="Schools" />
             </div>
               
-            <div className='table-padding'>
-            <h2 className='mb-12 text-3xl'>Transfer Requests</h2>
-            <table className="border border-collapse w-full">
-  <thead>
-    <tr>
-      <th className="border p-2">Full Name</th>
-      <th className="border p-2">School Name</th>
-      <th className="border p-2">Experience</th>
-      <th className="border p-2">City</th>
-      <th className="border p-2">CNIC</th>
-      <th className="border p-2">Email</th>
-      <th className="border p-2">Message</th>
-      <th className="border p-2">Status</th>
-      <th className="border p-2">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    {transferRequests.map(request => (
-      <tr key={request._id}>
-        <td className="border p-2">{request.fullName}</td>
-        <td className="border p-2">{request.schoolName}</td>
-        <td className="border p-2">{request.experience}</td>
-        <td className="border p-2">{request.city}</td>
-        <td className="border p-2">{request.cnic}</td>
-        <td className="border p-2">{request.email}</td>
-        <td className="border p-2">{request.message}</td>
-        <td className="border p-2">{request.status}</td>
-        <td className="border p-2">
-          {/* Your accept and reject buttons */}
-        </td>
-      </tr>
-    ))}
-  </tbody>
-</table>
-
-          </div>
             </div>
             <Footer />
           </div>
@@ -128,7 +76,7 @@ const TranferRequests = () => {
   );
 };
 
-export default TranferRequests;
+export default ViewSchools;
 
 
 

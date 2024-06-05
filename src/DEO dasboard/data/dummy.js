@@ -4,7 +4,9 @@ import { FiShoppingBag  } from 'react-icons/fi';
 
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
-
+import { LiaChalkboardTeacherSolid } from "react-icons/lia";
+import { IoSchoolSharp } from "react-icons/io5";
+import { BiTransfer } from "react-icons/bi";
 
 export const gridOrderImage = (props) => (
   <div>
@@ -45,15 +47,15 @@ export const links = [
     links: [
       {
         name: 'schools',
-        icon: <AiOutlineShoppingCart />,
+        icon: <IoSchoolSharp />,
       },
       {
-        name: 'employees',
-        icon: <IoMdContacts />,
+        name: 'teachers',
+        icon: <LiaChalkboardTeacherSolid />,
       },
       {
         name: 'transfer-requests',
-        icon: <RiContactsLine />,
+        icon: <BiTransfer />,
       },
     ],
   },
