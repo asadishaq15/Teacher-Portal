@@ -118,12 +118,12 @@ const RequestTransfer = () => {
               <div className="flex justify-between items-center">
                 <Header category="Page" title="Transfer Requests" />
                 <button
-                 className="text-white font-bold py-2 px-4 rounded"
-                 style={{ backgroundColor: 'rgb(3, 201, 215)', hover: { backgroundColor: 'rgba(3, 201, 215, 0.8)' } }}
-                  onClick={openModal}
-                >
-                  New Request
-                </button>
+              className="text-white font-bold py-2 px-4 rounded"
+              style={{ backgroundColor: currentColor }}
+              onClick={openModal}
+            >
+              New Request
+            </button>
               </div>
             </div>
 

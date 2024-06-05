@@ -45,10 +45,7 @@ export const links = [
   {
     title: 'Pages',
     links: [
-      {
-        name: 'teacher-profile',
-        icon: <RiContactsLine />,
-      },
+     
 
       {
         name: 'Request-Tranfer',

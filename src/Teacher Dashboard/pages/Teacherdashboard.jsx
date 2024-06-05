@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import { Navbar, Footer, Sidebar, ThemeSettings } from "../components";
+import { Navbar, Footer, Sidebar, ThemeSettings,UserProfile } from "../components";
 
 
 const Teacherdashboard = () => {
@@ -71,6 +71,9 @@ const Teacherdashboard = () => {
           </div>
           
         </div>
+        <div className="p-6">
+            <UserProfile /> 
+          </div>
         <Footer />
       </div>
     </div>
