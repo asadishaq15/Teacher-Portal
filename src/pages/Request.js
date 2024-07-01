@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import axios from 'axios';
+import api from '../components/api';
+
 
 const Request = () => {
     const [formData, setFormData] = useState({
@@ -24,31 +25,32 @@ const Request = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         try {
+            // Make a POST request to the backend endpoint
+            const response = await api.post('/teachers/transfer-request', formData);
 
-          await axios.post('http://localhost:8000/api/transfer-request', formData);
+            // Handle the response from the backend
+            console.log('Transfer request submitted successfully', response.data);
 
-          console.log('Transfer request submitted successfully');
-      
-          // Reset form after submission
-          setFormData({
-            fullName: '',
-            schoolName: '',
-            experience: '',
-            city: '',
-            cnic: '',
-            email: '',
-            message: ''
-          });
+            // Reset form after submission
+            setFormData({
+                fullName: '',
+                schoolName: '',
+                experience: '',
+                city: '',
+                cnic: '',
+                email: '',
+                message: ''
+            });
         } catch (error) {
-          // Handle error
-          console.error('Failed to submit transfer request', error);
+            // Handle error
+            console.error('Failed to submit transfer request', error);
         }
-      };
+    };
+
     return (
         <>
-
             <Navbar />
             <div className="max-w-md mx-auto">
                 <h2 className="text-2xl font-bold mb-12 mt-12 text-center text-[#165371]">Employee Transfer Request</h2>
