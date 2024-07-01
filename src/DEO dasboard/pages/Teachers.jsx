@@ -5,7 +5,7 @@ import { useStateContext } from '../../contexts/ContextProvider';
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "../components";
-import { getTeacherProfiles } from '../../components/api';
+import {  getSchoolChangeRequests } from '../../components/api';
 
 const Teachers = () => {
     const {
@@ -33,7 +33,7 @@ const Teachers = () => {
     useEffect(() => {
         const fetchTeacherProfiles = async () => {
             try {
-                const teacherData = await getTeacherProfiles();
+                const teacherData = await getSchoolChangeRequests();
                 setTeachers(teacherData);
             } catch (error) {
                 console.error('Error fetching teacher profiles:', error);

@@ -4,7 +4,7 @@ import { useStateContext } from '../../contexts/ContextProvider';
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "../components";
-import { submitTransferRequest } from '../../components/api';
+import { requestSchoolChange } from '../../components/api';
 
 const RequestTransfer = () => {
     const {
@@ -34,7 +34,7 @@ const RequestTransfer = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await submitTransferRequest(formData);
+            await requestSchoolChange(formData);
             alert('Transfer request submitted successfully');
         } catch (error) {
             console.error('Error submitting transfer request:', error);

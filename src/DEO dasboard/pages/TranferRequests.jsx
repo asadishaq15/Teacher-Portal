@@ -4,7 +4,7 @@ import { useStateContext } from '../../contexts/ContextProvider';
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "../components";
-import { getTransferRequests, acceptTransferRequest, rejectTransferRequest } from '../../components/api';
+import { getSchoolChangeRequests, approveSchoolChange, rejectSchoolChange } from '../../components/api';
 
 const TransferRequests = () => {
     const {
@@ -31,7 +31,7 @@ const TransferRequests = () => {
     useEffect(() => {
         const fetchTransferRequests = async () => {
             try {
-                const requestData = await getTransferRequests();
+                const requestData = await getSchoolChangeRequests();
                 setRequests(requestData);
             } catch (error) {
                 console.error('Error fetching transfer requests:', error);
@@ -43,7 +43,7 @@ const TransferRequests = () => {
 
     const handleAccept = async (requestId) => {
         try {
-            await acceptTransferRequest(requestId);
+            await approveSchoolChange(requestId);
             setRequests(requests.filter(request => request.id !== requestId));
         } catch (error) {
             console.error('Error accepting transfer request:', error);
@@ -52,7 +52,7 @@ const TransferRequests = () => {
 
     const handleReject = async (requestId) => {
         try {
-            await rejectTransferRequest(requestId);
+            await rejectSchoolChange(requestId);
             setRequests(requests.filter(request => request.id !== requestId));
         } catch (error) {
             console.error('Error rejecting transfer request:', error);
